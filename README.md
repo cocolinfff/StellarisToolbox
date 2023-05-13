@@ -27,8 +27,8 @@ mod1dict=stellarisReader.stellarisEach("D:\\mod1")
 # to read all the files in the dir and subdir
 
 print(mod1dict)
-
-
+```
+```
 {'A': {'sub': [{'add': '3'}, {'add': '5'}], 'name': '"xxx"', 'pos': '"yy"'}}
 ```
 ##### Print Code and Print files
