@@ -11,6 +11,10 @@ def mergeDict(d1,d2):
     for i in common_keys:
         if type(d1[i])==list and type(d2[i])!=list:
             d[i] = d1[i]+[d2[i]]
+        elif type(d1[i])==dict:
+            d.update(d1)
+            d.update(d2)
+            print(d)
         else:
             d[i] = [d1[i],d2[i]]
     for i in d1_keys_not_in_d2:
