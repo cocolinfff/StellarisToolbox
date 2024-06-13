@@ -9,7 +9,10 @@ def mergeDict(d1,d2):
     common_keys = d2.keys() & d1.keys()
     d={}
     for i in common_keys:
-        d[i] = [d1[i],d2[i]]
+        if type(d1[i])==list and type(d2[i])!=list:
+            d[i] = d1[i]+[d2[i]]
+        else:
+            d[i] = [d1[i],d2[i]]
     for i in d1_keys_not_in_d2:
         d[i] = d1[i]
     for i in d2_keys_not_in_d1:
@@ -111,6 +114,7 @@ def stellarisPrint(f,Dict,tab=0):
             f.write(key + ' = '+values+'\n')
 def stellarisEach(filedir):
     dictMain = {}
+    #print(eachFile(filedir))
     for fileName in eachFile(filedir):
         with open(fileName, 'r', encoding='UTF-8') as f:
             origin = stringStream(f.read())
